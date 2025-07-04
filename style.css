@@ -29,3 +29,73 @@ img {
 }
 
 /* END TEMPLATE */
+
+:root {
+    --color-one: #36244f;
+    --color-two: #3a579a;
+    --color-three: #ff2fa9;
+    --color-four: #ff8172;
+    --color-five: #faba61;
+    --color-six: #fffc40;
+}
+
+#page {
+    display: grid;
+    background-color: black;
+    grid-template-areas: "header" "display" "status" "footer";
+    grid-template-rows: 1fr 3fr 1fr .3fr;
+    color: white;
+}
+
+#header {
+    grid-area: header;
+    text-align: center;
+    padding-top: 25px;
+}
+
+#display {
+    grid-area: display;
+}
+
+#gameboard {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: var(--color-six);
+    border: 2px solid var(--color-four);
+}
+
+#gameboard div {
+    border: 2px solid var(--color-four);
+
+}
+
+#gameboard 
+
+#status {
+    grid-area: status;
+}
+
+#status button{
+    font-size: .8rem;
+
+}
+
+#footer {
+    grid-area: footer;
+    font-size: .5rem;
+    color: var(--color-six);
+}
+
+#footer a{
+    color: var(--color-six);
+    text-decoration: none;
+}
+
+#footer a:visited{
+    color: var(--color-six);
+}
+
+#footer a:hover{
+    font-weight: 600;
+}
