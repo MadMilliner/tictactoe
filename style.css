@@ -43,8 +43,11 @@ img {
     display: grid;
     background-color: black;
     grid-template-areas: "header" "display" "status" "footer";
-    grid-template-rows: 1fr 3fr 1fr .3fr;
+    grid-template-rows: .5fr 3fr .3fr .2fr;
     color: white;
+    text-align: center;
+    border: var(--color-two);
+    height: 100vh;
 }
 
 #header {
@@ -55,25 +58,40 @@ img {
 
 #display {
     grid-area: display;
+    color: white;
 }
 
 #gameboard {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    background-color: var(--color-six);
-    border: 2px solid var(--color-four);
+    grid-template-rows: repeat(3, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    background-color: black;
+    width: 75%;
+    height: clamp(40%, 350px, 75%);
+    margin: auto;
 }
 
-#gameboard div {
-    border: 2px solid var(--color-four);
+/* These are the game squares*/
+#gameboard .cell {
+    border: 2px solid var(--color-two);
+    font-size: clamp(2rem, 50px, 4rem);
+    box-shadow: 0 0 0 2px var(--color-two);
+    cursor: pointer;
+}
+/* These are the game squares */
 
+.player1-marker {
+  color: var(--color-six);
 }
 
-#gameboard 
+.player2-marker {
+  color: var(--color-three);
+}
 
 #status {
     grid-area: status;
+    font-size: 1.3rem;
+    color: var(--color-four);
 }
 
 #status button{
@@ -85,6 +103,7 @@ img {
     grid-area: footer;
     font-size: .5rem;
     color: var(--color-six);
+    text-align: right;
 }
 
 #footer a{
