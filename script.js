@@ -3,14 +3,10 @@
 var players = {
   player1: {
     name: window.prompt("Enter Player 1 name:", "X"), 
-    marker: "X", 
-    win: function() { gameboard.statusDiv.innerText = `${this.name} Wins!`; }
-  },
+    marker: "X", },
   player2: {
     name: window.prompt("Enter Player 2 name:", "O"), 
-    marker: "O", 
-    win: function() { gameboard.statusDiv.innerText = `${this.name} Wins!`; }
-  }
+    marker: "O"}
 };
 
 // game setup
@@ -62,10 +58,13 @@ var gameboard = {
 
         }
         if(roundWon){
-            currentPlayer.win();
+            gameboard.statusDiv.innerText = `${currentPlayer.name} Wins!`;
+            gameboard.resetButton.style.display = "block";;
         }
         else if(!gameState.includes("")){
-            gameboard.statusDiv.innerText = `Draw. Play again?`            
+            gameboard.statusDiv.innerText = `Draw. Play again?`;
+            gameboard.resetButton.style.display = "block";
+
         }
         else {currentPlayer = currentPlayer === players.player1 ? players.player2 : players.player1;
                 gameboard.statusDiv.innerText = `${currentPlayer.name}'s turn`;}
@@ -89,6 +88,7 @@ var gameboard = {
         cell.classList.remove('player1-marker', 'player2-marker');
         currentPlayer = players.player1;
         gameboard.statusDiv.innerText = `${currentPlayer.name}'s turn`;
+        gameboard.resetButton.style.display = "none";
     }); 
     },    
 

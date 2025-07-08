@@ -58,7 +58,24 @@ img {
 
 #display {
     grid-area: display;
+    display: flex;
+    flex-direction: column;
     color: white;
+    align-content: center;
+    align-items: center;
+}
+
+#resetButton {
+    display: none;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: var(--color-five);
+    border: 1px solid var(--color-four);
+    font-family: 'Arial Narrow Bold', sans-serif;
+    padding: 5px;
+    width: 7rem;
+    /* -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
 }
 
 #gameboard {
